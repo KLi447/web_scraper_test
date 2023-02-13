@@ -1,3 +1,4 @@
+const query = require("./queries/query");
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -17,3 +18,5 @@ app.listen(port, () => {
   });
   console.log(`Server is running on port: ${port}`);
 });
+
+query.getSingleStockInfo("AAPL");
