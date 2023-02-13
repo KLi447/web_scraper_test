@@ -1,3 +1,4 @@
+//For web scraping
 const axios = require("axios");
 
 module.exports = {
@@ -21,4 +22,8 @@ module.exports = {
             return resolve(res);
         }).catch(err => reject(err));
     }),
+    dateToEpoch: date => {
+        console.log(date); //Date in GMT
+        return Math.round(new Date(date).getTime() / 1000.0);
+    }
 }
