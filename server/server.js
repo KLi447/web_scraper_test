@@ -1,4 +1,4 @@
-const query = require("./queries/query");
+const utils = require("./utils/utils");
 const express = require("express");
 const app = express();
 const cors = require("cors");
@@ -19,4 +19,8 @@ app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
 });
 
-query.getSingleStockInfo("AAPL");
+utils.getSingleStockInfo("AAPL");
+
+const test = new Date("2015-03-25");
+const ans = utils.dateToEpoch(test);
+console.log(ans);
